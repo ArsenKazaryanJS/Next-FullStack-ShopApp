@@ -24,6 +24,7 @@ export const AppContextProvider = (props) => {
 
     const fetchProductData = async () => {
         setProducts(productsDummyData)
+        
     }
 
     const fetchUserData = async () => {

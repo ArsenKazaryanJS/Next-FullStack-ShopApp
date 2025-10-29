@@ -7,6 +7,7 @@ const ProductCard = ({ product }) => {
 
     const { currency, router } = useAppContext()
 
+
     return (
         <div
             onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}
@@ -32,7 +33,7 @@ const ProductCard = ({ product }) => {
             <p className="md:text-base font-medium pt-2 w-full truncate">{product.name}</p>
             <p className="w-full text-xs text-gray-500/70 max-sm:hidden truncate">{product.description}</p>
             <div className="flex items-center gap-2">
-                <p className="text-xs">{4.5}</p>
+                <p className="text-xs">{4.8}</p>
                 <div className="flex items-center gap-0.5">
                     {Array.from({ length: 5 }).map((_, index) => (
                         <Image

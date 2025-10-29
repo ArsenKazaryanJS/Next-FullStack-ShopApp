@@ -13,7 +13,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider   appearance={{
+        baseTheme: undefined,
+        variables: {
+          colorPrimary: "#284cadff", // основной цвет
+          colorBackground: "#ffffff",
+          colorText: "#111",
+          colorInputText: "#111",
+        },
+        elements: {
+          card: "shadow-lg rounded-2xl border border-gray-200",
+          userButtonPopoverCard: "bg-white shadow-xl rounded-xl border border-gray-100",
+          userButtonPopoverFooter: "hidden", // скрыть Development mode
+        },
+      }}>
       <html lang="en">
         <body className={`${outfit.className} antialiased text-gray-700`}>
           <Toaster />
