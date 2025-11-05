@@ -5,20 +5,16 @@ import Link from "next/link";
 import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { useClerk, UserButton } from "@clerk/nextjs";
+import "@/styles/navbar.css";
+import AppTitle from "./AppTitle";
 
 const Navbar = () => {
   const { isSeller, router, user } = useAppContext();
   const { openSignIn } = useClerk();
 
-
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700">
-      <Image
-        className="cursor-pointer w-28 md:w-32"
-        onClick={() => router.push("/")}
-        src={assets.logo}
-        alt="logo"
-      />
+      <AppTitle />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
         <Link href="/" className="hover:text-gray-900 transition">
           Home
@@ -47,7 +43,7 @@ const Navbar = () => {
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         {user ? (
           <UserButton>
-              <UserButton.MenuItems>
+            <UserButton.MenuItems>
               <UserButton.Action
                 label="Home"
                 labelIcon={<HomeIcon />}
@@ -68,7 +64,7 @@ const Navbar = () => {
                 onClick={() => router.push("/my-orders")}
               ></UserButton.Action>
             </UserButton.MenuItems>
-             <UserButton.MenuItems>
+            <UserButton.MenuItems>
               <UserButton.Action
                 label="Productss"
                 labelIcon={<BoxIcon />}
